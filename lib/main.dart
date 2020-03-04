@@ -175,7 +175,7 @@ class _PostFormState extends State<PostForm> {
     try {
       return f();
     } finally {
-      new Future.delayed(new Duration(milliseconds: 200), () {
+      new Future.delayed(new Duration(milliseconds: 100), () {
         Navigator.pop(context);
       });
     }

@@ -1,4 +1,4 @@
-package com.example.ogp_app_flutter
+package org.pyspa.ogp
 
 import io.flutter.embedding.android.FlutterActivity
 
