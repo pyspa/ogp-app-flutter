@@ -1,6 +1,6 @@
-# OGP App Client
+# OGP.app Client
 
-This is a client of OGP App.
+This is a client of OGP.app.
 
 ## Getting Started
 
