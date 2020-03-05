@@ -39,13 +39,17 @@ class PostModel with ChangeNotifier {
     notifyListeners();
   }
 
+  void clear() {
+    _words = "";
+  }
+
   Future<String> post() async {
     debugPrint("POST $_words");
 
     var headers = {'content-type': 'application/json'};
     var body = json.encode({'words': _words});
     var resp = await http.post(postUrl, headers: headers, body: body);
-
+    clear();
     if (resp.statusCode == 200) {
       var res = json.decode(resp.body);
       var id = res["id"];
@@ -105,6 +109,7 @@ class _PostFormState extends State<PostForm> {
                       icon: Icon(Icons.clear),
                       onPressed: () {
                         _controller.clear();
+                        model.clear();
                       }),
                 ),
                 onChanged: model.setInput,
